@@ -1,0 +1,250 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #232324;  /* ✅ พื้นหลัง */
+  color: #fff;
+}
+
+
+
+/* Portfolio Main Image */
+.categories {
+  text-align: center;
+}
+
+.main-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  margin: 40px auto;   /* เว้นระยะบน-ล่าง 40px และจัดกลาง */
+  padding: 0 20px;     /* เว้นระยะซ้าย-ขวา 20px */
+  border-radius: 60px;
+}
+.details {
+  display: flex;
+  justify-content: center;   /* จัดกลางแนวนอน */
+  align-items: flex-start;   /* ให้หัวบล็อคตรงกัน */
+  gap: 20px;                 /* ระยะห่างระหว่างบล็อค */
+  padding: 20px 0;
+}
+
+
+.detail {
+  position: relative;
+  width: 240px;
+  text-align: center;
+}
+
+/* ออร่า */
+.aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* แยกสีออร่า */
+.aura.red { background: #e53935; }
+.aura.yellow { background: #fbc02d; }
+.aura.green { background: #43a047; }
+.aura.blue { background: #29b6f6; }
+
+/* รูป */
+.detail img {
+    will-change: transform, box-shadow;
+  position: relative;
+  z-index: 1; /* อยู่เหนือออร่า */
+  max-width: 240px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover เฉพาะรูป */
+.detail img:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+
+/* ขยับบล็อคเหลือง+เขียวขึ้น */
+.d2 { margin-top: -40px; }
+.d3 { margin-top: -40px; }
+
+/* ตั้งค่าการ์ดทั้งหมด */
+.card {
+  border-radius: 20px;
+  padding: 30px;
+  color: #fff;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-15px) scale(1.05);   /* ยกขึ้น + ขยาย */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);    /* เงาเข้มขึ้น */
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/*------------------ TEAM Section -----------------*/
+.team {
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.team-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.team-subtitle {
+  font-size: 16px;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* การ์ดทีม */
+.team-cards {
+  display: flex;
+  flex-direction: column;  /* ✅ เรียงลงล่าง */
+  align-items: center;     /* จัดกลาง */
+  gap: 30px;               /* ระยะห่างแต่ละการ์ด */
+}
+
+.team-cards .card {
+  background: #2e2f31;
+  border-radius: 50px;
+  padding: 20px;
+  width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-cards .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
+}
+
+.team-img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+
+
+
+
+/*---------------- Last Section ----------------*/
+.last-section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+
+}
+
+/* Overlay มืดๆ */
+.bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.button-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;   /* เรียงแนวตั้ง */
+  gap: 30px;
+  align-items: center;
+}
+
+.btn-img img {
+  width:700px;   /* ปรับขนาดปุ่ม */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.btn-img img:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(98, 98, 98, 0.6);
+}
+
+
+/* Layout responsive */
+@media (max-width: 1024px) {
+  .ai-section,
+  .uxui-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .info {
+    max-width: 100%;
+  }
+}
+
+/* ================= Twinkling Stars ================= */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;   /* ไม่บังการกด */
+  z-index: -1;           /* อยู่หลัง content */
+}
+
+.star {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(80px);     /* เบลอให้ฟุ้ง */
+  opacity: 0;
+  animation: twinkle 2.5s infinite;
+}
+
+/* keyframes ทำให้แสงสว่าง-ดับ */
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50%      { opacity: 1; transform: scale(1.2); }
+}
+
+/* ✅ ตำแหน่งสุ่ม + ดีเลย์ให้กระพริบไม่พร้อมกัน */
+.s1 { top: 20%; left: 15%; animation-delay: 0s; }
+.s2 { top: 40%; left: 70%; animation-delay: 1s; }
+.s3 { top: 65%; left: 30%; animation-delay: 2s; }
+.s4 { top: 10%; left: 85%; animation-delay: 3s; }
+.s5 { top: 75%; left: 55%; animation-delay: 1.5s; }
+

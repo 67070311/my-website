@@ -1,0 +1,149 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #232324;  /* พื้นหลังเข้ม */
+  color: #fff;
+}
+
+.back-fixed {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+.back-fixed:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+}
+
+/* Banner Section */
+.categories {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-img {
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+  display: block;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+/*------------------- Contact Team ---------------------*/
+.contact-team {
+  padding: 30px 20px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #121212;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
+}
+
+.contact-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+
+/*---------------- Last Section ----------------*/
+.last-section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+
+}
+
+/* Overlay มืดๆ */
+.bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.button-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;   /* เรียงแนวตั้ง */
+  gap: 30px;
+  align-items: center;
+}
+
+.btn-img img {
+  width:700px;   /* ปรับขนาดปุ่ม */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.btn-img img:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(71, 71, 71, 0.6);
+}
+
+/* ================= Twinkling Stars ================= */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;   /* ไม่บังการกด */
+  z-index: -1;           /* อยู่หลัง content */
+}
+
+.star {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(80px);     /* เบลอให้ฟุ้ง */
+  opacity: 0;
+  animation: twinkle 2.5s infinite;
+}
+
+/* keyframes ทำให้แสงสว่าง-ดับ */
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50%      { opacity: 1; transform: scale(1.2); }
+}
+
+/* ✅ ตำแหน่งสุ่ม + ดีเลย์ให้กระพริบไม่พร้อมกัน */
+.s1 { top: 20%; left: 15%; animation-delay: 0s; }
+.s2 { top: 40%; left: 70%; animation-delay: 1s; }
+.s3 { top: 65%; left: 30%; animation-delay: 2s; }
+.s4 { top: 10%; left: 85%; animation-delay: 3s; }
+.s5 { top: 75%; left: 55%; animation-delay: 1.5s; }
+
