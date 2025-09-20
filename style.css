@@ -84,7 +84,7 @@ body {
   border-radius: 20px;
   padding: 30px;
   color: #fff;
-  width: 240px;
+  width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -213,61 +213,38 @@ body {
   }
 }
 
-.team {
-  position: relative; /* ⭐ เพื่อให้ stars อ้างอิงขอบของ section นี้ */
-  text-align: center;
-  padding: 20px 20px 120px; /* เผื่อพื้นที่ล่างให้ดาว */
-}
-
-/* Stars container */
-.team {
-  text-align: center;
-  padding: 20px 20px 120px;
-}
-
-.team-cards-wrap {
-  position: relative;   /* ⭐ ให้ stars อ้างอิงพื้นที่นี้ */
-  margin-top: 40px;
-}
-
-.team-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  z-index: 2;           /* ⭐ การ์ดอยู่เหนือดาว */
-  position: relative;
-}
-
+/* ================= Twinkling Stars ================= */
 .stars {
-  position: absolute;
-  top: 0;               /* เริ่มตั้งแต่การ์ด */
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%;         /* ครอบโซนการ์ดลงไป */
-  pointer-events: none;
-  z-index: 1;           /* ⭐ อยู่หลังการ์ด */
+  height: 100%;
+  pointer-events: none;   /* ไม่บังการกด */
+  z-index: -1;           /* อยู่หลัง content */
 }
 
 .star {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background: white;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(80px);     /* เบลอให้ฟุ้ง */
   opacity: 0;
-  animation: twinkle 2s infinite;
+  animation: twinkle 2.5s infinite;
 }
 
+/* keyframes ทำให้แสงสว่าง-ดับ */
 @keyframes twinkle {
   0%, 100% { opacity: 0; transform: scale(0.6); }
   50%      { opacity: 1; transform: scale(1.2); }
 }
 
-/* ตัวอย่างตำแหน่งดาว */
-.s1 { left: 10%; top: 20%; animation-delay: 0s; }
-.s2 { left: 30%; top: 60%; animation-delay: 1s; }
-.s3 { left: 50%; top: 40%; animation-delay: 2s; }
-.s4 { left: 70%; top: 75%; animation-delay: 2.5s; }
-.s5 { left: 90%; top: 50%; animation-delay: 3s; }
+/* ✅ ตำแหน่งสุ่ม + ดีเลย์ให้กระพริบไม่พร้อมกัน */
+.s1 { top: 20%; left: 15%; animation-delay: 0s; }
+.s2 { top: 40%; left: 70%; animation-delay: 1s; }
+.s3 { top: 65%; left: 30%; animation-delay: 2s; }
+.s4 { top: 10%; left: 85%; animation-delay: 3s; }
+.s5 { top: 75%; left: 55%; animation-delay: 1.5s; }
+
