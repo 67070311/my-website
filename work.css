@@ -31,7 +31,7 @@ body {
   position: fixed;
   top: 0;
   right: -50%;               /* เริ่มต้นซ่อนอยู่ขวา */
-  width: 35%;                /* กินครึ่งจอ */
+  width: 45%;                /* กินครึ่งจอ */
   height: 100%;
   background: rgba(0,0,0,0.9); /* ดำโปร่งๆ */
   backdrop-filter: blur(6px); /* เบลอหลัง */
