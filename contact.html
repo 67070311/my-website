@@ -3,13 +3,42 @@
 <head>
   <meta charset="UTF-8">
 
-  <a href="index.html" class="back-fixed">Back</a>
   <title>Portfolio</title>
   <link rel="stylesheet" href="contact.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Hamburger Menu Button -->
+  <div class="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar Menu -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <a href="index.html">Home</a>
+      <a href="work.html">Some of our work</a>
+      <a href="contact.html">Our contact</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+   <!------------------------ Home Button ---------------------->
+    <a href="index.html" class="back-home-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+      <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"/>
+    </svg>
+  </a>
+
+
 
   <!-- Banner -->
   <section class="categories">

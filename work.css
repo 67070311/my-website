@@ -6,26 +6,137 @@ body {
   color: #fff;
 }
 
-.back-fixed {
+/* ปุ่มเมนู */
+.menu-btn {
+  position: fixed;       /* ✅ fix ไว้ */
+  top: 20px;             /* ระยะจากขอบบน */
+  right: 20px;           /* ระยะจากขอบขวา */
+  width: 50px;
+  height: 50px;
+  background: #2e2f31;   /* พื้นหลังปุ่ม */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;              /* ระยะห่างขีด */
+  cursor: pointer;
+  z-index: 9999;         /* ให้อยู่บนสุด */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: background 0.3s;
+}
+
+/* Sidebar Menu */
+.sidebar {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  padding: 2px 15px;
-  border-radius: 6px;
+  top: 0;
+  right: -50%;               /* เริ่มต้นซ่อนอยู่ขวา */
+  width: 35%;                /* กินครึ่งจอ */
+  height: 100%;
+  background: rgba(0,0,0,0.9); /* ดำโปร่งๆ */
+  backdrop-filter: blur(6px); /* เบลอหลัง */
+  transition: right 0.4s ease; /* slide effect */
+  z-index: 9998;              /* ต่ำกว่าปุ่ม */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* เปิดเมนู */
+.sidebar.active {
+  right: 0; /* slide เข้ามา */
+}
+
+/* เนื้อหาเมนู */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.sidebar-content a {
+  font-size: 24px;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  z-index: 999;
-  transition: background 0.3s ease;
+  transition: color 0.3s;
 }
 
-.back-fixed:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000000;
+.sidebar-content a:hover {
+  color: #8a8a8a;  /* ฟ้าเวลา hover */
 }
 
-/* Banner Section */
+
+.menu-btn:hover {
+  background: #3b3c3f;
+  transform: scale(1.1);   /* hover เปลี่ยนสี */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* ดำโปร่งๆ */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 9997; /* น้อยกว่า sidebar แต่สูงกว่าพื้นหลัง */
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/*--------------- ขีด 3 ขีด -------------------*/
+.menu-btn span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+
+
+/*--------------------- Back to home -----------------*/
+.back-home-btn {
+  position: fixed;
+  top: 80px;        /* ห่างจากบน 20px + ความสูงปุ่มเมนู 50px + margin 10px */
+  right: 20px;      /* ชิดขวาเท่ากับปุ่มเมนู */
+  width: 50px;
+  height: 50px;
+  background: #2e2f31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;   /* หรือใช้ 50% ถ้าอยากเป็นปุ่มกลม */
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.back-home-btn:hover {
+  background: #3b3c3f;
+  transform: scale(1.1);
+}
+
+.back-home-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: white;
+}
+
+
+
+
+/*--------------------- Banner Section -----------------*/
 .categories {
   text-align: center;
   padding: 40px 20px;
@@ -91,6 +202,24 @@ body {
   letter-spacing: 2px;
   text-align: center;
 }
+
+.clients {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.clients h2 {
+  font-size: 40px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #fff;
+}
+
+.clients-subtitle {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
 
 .work-list {
   display: flex;

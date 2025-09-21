@@ -6,11 +6,105 @@ body {
   color: #fff;
 }
 
+/* ปุ่มเมนู */
+.menu-btn {
+  position: fixed;       /* ✅ fix ไว้ */
+  top: 20px;             /* ระยะจากขอบบน */
+  right: 20px;           /* ระยะจากขอบขวา */
+  width: 50px;
+  height: 50px;
+  background: #2e2f31;   /* พื้นหลังปุ่ม */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;              /* ระยะห่างขีด */
+  cursor: pointer;
+  z-index: 9999;         /* ให้อยู่บนสุด */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: background 0.3s;
+}
+
+/* Sidebar Menu */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -50%;               /* เริ่มต้นซ่อนอยู่ขวา */
+  width: 35%;                /* กินครึ่งจอ */
+  height: 100%;
+  background: rgba(0,0,0,0.9); /* ดำโปร่งๆ */
+  backdrop-filter: blur(6px); /* เบลอหลัง */
+  transition: right 0.4s ease; /* slide effect */
+  z-index: 9998;              /* ต่ำกว่าปุ่ม */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* เปิดเมนู */
+.sidebar.active {
+  right: 0; /* slide เข้ามา */
+}
+
+/* เนื้อหาเมนู */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.sidebar-content a {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sidebar-content a:hover {
+  color: #8a8a8a;  /* ฟ้าเวลา hover */
+}
 
 
-/* Portfolio Main Image */
+.menu-btn:hover {
+  background: #3b3c3f;   /* hover เปลี่ยนสี */
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* ดำโปร่งๆ */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 9997; /* น้อยกว่า sidebar แต่สูงกว่าพื้นหลัง */
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/*----------------- ขีด 3 ขีด -------------*/
+.menu-btn span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+
+
+/*---------------------- Portfolio Main Image -----------------*/
 .categories {
   text-align: center;
+  
 }
 
 .main-img {
