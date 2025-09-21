@@ -99,21 +99,16 @@ body {
 /* Responsive */
 @media (max-width: 1024px) {
   .details {
-    display: grid;                      /* ใช้ grid แทน flex */
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;              /* จัดกลางแต่ละบล็อค */
-    gap: 20px;
+    justify-content: center;  /* จัดกลางตลอด */
   }
 }
 
 @media (max-width: 768px) {
   .details {
-    display: grid;                      /* ยังคงใช้ grid */
-    grid-template-columns: 1fr;         /* หนึ่งคอลัมน์เต็มจอ */
-    justify-items: center;              /* บล็อคอยู่กลาง */
-    gap: 20px;
+    justify-content: center;  /* จัดกลางตลอด */
   }
 }
+
 
 
 
