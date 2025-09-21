@@ -6,13 +6,13 @@ body {
   color: #fff;
 }
 
-/* ปุ่มเมนู */
+/*---------- ปุ่มเมนู -----------*/
 .menu-btn {
   position: fixed;       /* ✅ fix ไว้ */
   top: 20px;             /* ระยะจากขอบบน */
   right: 20px;           /* ระยะจากขอบขวา */
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: #2e2f31;   /* พื้นหลังปุ่ม */
   border-radius: 12px;
   display: flex;
@@ -107,10 +107,10 @@ body {
 /*--------------------- Back to home -----------------*/
 .back-home-btn {
   position: fixed;
-  top: 80px;        /* ห่างจากบน 20px + ความสูงปุ่มเมนู 50px + margin 10px */
+  top: 120px;        /* ห่างจากบน 20px + ความสูงปุ่มเมนู 50px + margin 10px */
   right: 20px;      /* ชิดขวาเท่ากับปุ่มเมนู */
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: #2e2f31;
   display: flex;
   align-items: center;
@@ -128,8 +128,8 @@ body {
 }
 
 .back-home-btn svg {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   fill: white;
 }
 

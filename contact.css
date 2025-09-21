@@ -6,13 +6,13 @@ body {
   color: #fff;
 }
 
-/* ปุ่มเมนู */
+/*---------- ปุ่มเมนู -----------*/
 .menu-btn {
   position: fixed;       /* ✅ fix ไว้ */
   top: 20px;             /* ระยะจากขอบบน */
   right: 20px;           /* ระยะจากขอบขวา */
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: #2e2f31;   /* พื้นหลังปุ่ม */
   border-radius: 12px;
   display: flex;
@@ -74,7 +74,7 @@ body {
   transition: background 0.3s, transform 0.2s;
 }
 
-.overlay {  
+.overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
@@ -92,7 +92,8 @@ body {
 }
 
 
-/*----------------- ขีด 3 ขีด -------------------*/
+
+/*--------------- ขีด 3 ขีด -------------------*/
 .menu-btn span {
   display: block;
   width: 24px;
@@ -102,28 +103,14 @@ body {
 }
 
 
-/* Banner Section */
-.categories {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.main-img {
-  width: 100%;
-  max-width: 1300px;
-  height: auto;
-  display: block;
-  margin: 40px auto;
-  border-radius: 10px;
-}
 
 /*--------------------- Back to home -----------------*/
 .back-home-btn {
   position: fixed;
-  top: 80px;        /* ห่างจากบน 20px + ความสูงปุ่มเมนู 50px + margin 10px */
+  top: 120px;        /* ห่างจากบน 20px + ความสูงปุ่มเมนู 50px + margin 10px */
   right: 20px;      /* ชิดขวาเท่ากับปุ่มเมนู */
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   background: #2e2f31;
   display: flex;
   align-items: center;
@@ -141,12 +128,28 @@ body {
 }
 
 .back-home-btn svg {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   fill: white;
 }
 
 
+
+
+/*------------------- Banner Section ----------*/
+.categories {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.main-img {
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+  display: block;
+  margin: 40px auto;
+  border-radius: 10px;
+}
 
 /*------------------- Contact Team ---------------------*/
 .contact-team {
